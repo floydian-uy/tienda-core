@@ -119,9 +119,14 @@ module Tienda
     #   Tienda::Product.active.with_attribute('Manufacturer', 'Apple').with_attribute('Model', ['Macbook', 'iPhone'])
     #
     # @return [Enumerable]
-    def self.with_attributes(key, values)
-      product_ids = Tienda::ProductAttribute.searchable.where(key: key, value: values).pluck(:product_id).uniq
-      where(id: product_ids)
+    def self.with_attributes(key, values, is_searchable=true)
+      if(is_searchable)
+        product_ids = Tienda::ProductAttribute.searchable.where(key: key, value: values).pluck(:product_id).uniq
+        where(id: product_ids)
+      else
+        product_ids = Tienda::ProductAttribute.where(key: key, value: values).pluck(:product_id).uniq
+        where(id: product_ids)
+      end
     end
 
     # Imports products from a spreadsheet file
