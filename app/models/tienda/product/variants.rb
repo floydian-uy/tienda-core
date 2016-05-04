@@ -13,17 +13,18 @@ module Tienda
     # All products which are not variants
     scope :root, -> { where(:parent_id => nil) }
 
+    # Commented out per client request
     # If a variant is created, the base product should be updated so that it doesn't have stock control enabled
-    after_save do
-      if self.parent
-        self.parent.price = 0
-        self.parent.cost_price = 0
-        self.parent.tax_rate = nil
-        self.parent.weight = 0
-        self.parent.stock_control = false
-        self.parent.save if self.parent.changed?
-      end
-    end
+    #after_save do
+      #if self.parent
+        #self.parent.price = 0
+        #self.parent.cost_price = 0
+        #self.parent.tax_rate = nil
+        #self.parent.weight = 0
+        #self.parent.stock_control = false
+        #self.parent.save if self.parent.changed?
+      #end
+    #end
 
     # Does this product have any variants?
     #
