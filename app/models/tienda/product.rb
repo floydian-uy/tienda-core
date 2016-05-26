@@ -35,7 +35,7 @@ module Tienda
     accepts_nested_attributes_for :product_images, reject_if: proc { |attributes| attributes['image'].blank? }, allow_destroy: true
 
     # Registry
-    has_and_belongs_to_many :tienda_registries, :class_name => 'Tienda::Registry'
+    has_and_belongs_to_many :tienda_registries, :class_name => 'Tienda::Registry', as: :registries
 
     # Validations
     with_options if: Proc.new { |p| p.parent.nil? } do |product|
