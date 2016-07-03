@@ -1,0 +1,39 @@
+= form_for @registry do |f|
+  = f.error_messages
+  .panel.panel-default
+    .panel-heading
+      = t('tienda.registries.new_registry')
+    .panel-body
+      .row
+        .col-md-4
+          .form-group
+            = f.label :name, t('tienda.registries.name')
+            = f.text_field :name, class: 'form-control focus'
+        .col-md-4
+          .form-group
+            = f.label :slug, t('tienda.registries.slug')
+            = f.text_field :slug, class: 'form-control focus', :onfocus => 'this.value=generateSlug(this.value)'
+        .col-md-2
+          .form-group
+            = f.label :category, t('tienda.registries.category')
+            = f.text_field :category, class: 'form-control focus'
+        .col-md-1
+          .form-group
+            = f.label :active, t('tienda.registries.active')
+            = f.hidden_field :active
+            = check_box_tag :registries_active, class: 'form-control focus'
+        -#.col-md-12
+          .form-group
+            = label_tag('Buscar producto')
+            = text_field_tag('typeahead')
+        .col-md-12
+          .form-group
+            = f.label :products, t('tienda.registries.products')
+            %ul.no-style-list
+              = f.collection_check_boxes :product_ids, Tienda::Product.all, :id, :name do |p|
+                %li
+                  = p.check_box
+                  = p.label
+            %br
+        .col-md-12
+          = f.submit t('tienda.submit'),  class: 'btn btn-primary'

@@ -1,0 +1,21 @@
+- @page_title = t('tienda.registries.registries')
+
+.row
+  .col-md-12
+    = flash[:notice]
+.row
+  .col-md-12
+    %h1.page-header
+      = t('tienda.registries.registries')
+    / /. ROW
+    .row
+      .col-md-12
+        .pull-right
+          = link_to t('tienda.registries.new_registry'), :new_registry, class: 'btn btn-primary'
+
+%br
+.panel.panel-default
+  .panel-heading
+    = t('tienda.registries.list')
+  .panel-body
+    = render 'table', registries: @registries

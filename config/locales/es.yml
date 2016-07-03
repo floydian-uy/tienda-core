@@ -1,0 +1,666 @@
+en:
+  activerecord:
+    models:
+      tienda/country:
+        one: Pa&iacute;s
+        other: Paises
+      tienda/delivery_service:
+        one: Servicio de entregas
+        other: Servicio de entregas
+      tienda/delivery_service_price:
+        one: Costo de entregas
+        other: Costo de entregas
+      tienda/order:
+        one: Orden
+        other: Ordenes
+      tienda/order_item:
+        one: Items de Orden
+        other: Items de Orden
+      tienda/payment:
+        one: Pagos
+        other: Pagos
+      tienda/product:
+        one: Producto
+        other: Productos
+      tienda/product_attribute:
+        one: Atributo del Producto
+        other: Atributos del Producto
+      tienda/product_category:
+        one: Categoria del Producto
+        other: Categorias del Producto
+      tienda/setting:
+        one: Ajustes
+        other: Ajustes
+      tienda/stock_level_adjustment:
+        one: Ajuste de Stock
+        other: Ajustes de Stock
+      tienda/tax_rate:
+        one: Taza de Impuesto
+        other: Taza de Impuestos
+      tienda/user:
+        one: Usuario
+        other: Usuarios
+
+    attributes:
+      tienda/order:
+        billing_address1: Direccion de compra
+        billing_address3: Direccion de compra 3
+        billing_address4: Direccion de compra 4
+        billing_country: Pais de Compra
+        billing_postcode: Codigo Postal de compra
+        delivery_address1: Direccion de entrega
+        delivery_address3: Direccion de entrega 3
+        delivery_address4: Direccion de entrega 4
+        delivery_country: Pais de entrega
+        delivery_name: Nombre del servicio de entrega
+        delivery_service_id: Servicio de entrega
+        delivery_postcode: Codigo postal
+        email_address: E-Mail
+        first_name: Nombre/s
+        last_name: Apellido/s
+        phone_number: Numero telefonico
+        status: Estado
+        token: Simbolo (Token)
+      tienda/country:
+        name: Nombre
+      tienda/delivery_service:
+        name: Nombre
+        courier: Courier
+      tienda/delivery_service_price:
+        code: Codigo
+        cost_price: Precio de costo
+        max_weight: Peso maximo
+        min_weight: Peso minimo
+        price: Precio
+      tienda/order_item:
+        ordered_item: Items Ordenados
+        quantity: Cantidad
+      tienda/payment:
+        amount: Monto
+        method: Metodo
+        reference: Referencia
+      tienda/product:
+        cost_price: Precio de costo
+        description: Descripcion
+        name: Nombre
+        permalink: Permalink
+        price: Precio
+        short_description: Description corta
+        sku: SKU
+        weight: Peso
+      tienda/product_attribute:
+        key: Llave unica
+      tienda/product_category:
+        name: Nombre
+        permalink: Permalink
+      tienda/setting:
+        key: Llave unica
+        value: Valor
+        value_type: Tipo de valor
+      tienda/stock_level_adjustment:
+        adjustment: Ajuste
+        description: Descripcion
+        must_be_greater_or_equal_zero: debe ser menor o mayor a cero
+      tienda/tax_rate:
+        address_type: Tipo de direccion
+        name: Nombre
+        rate: Taza
+      tienda/user:
+        email_address: E-Mail
+        first_name: Nombre/s
+        last_name: Apellido/s
+        password: Contrasena
+        password_confirmation: Confirmar contrasena
+    errors:
+      template:
+        body: ! 'Los siguientes campos tiene algun problema:'
+        header:
+          one: 1 error impide que %{model} pueda ser salvado
+          many: ! '%{count} errores impidieron que %{model} pueda ser salvado'
+          other: ! '%{count} errores impidieron que %{model} pueda ser salvado'
+      models:
+        tienda/product_category:
+          attributes:
+            permalink:
+              wrong_format: "solo puede contener letras, numeros, - y _"
+        tienda/delivery:
+          attributes:
+            delivery_service_id:
+              must_be_specified: debe ser provisto
+              not_suitable: no aplica para esta orden
+        tienda/order:
+          attributes:
+            delivery_service_id:
+              must_be_specified: Debe ser provisto
+        tienda/product:
+          attributes:
+            permalink:
+              wrong_format: "solo puede contener letras, numeros, - y _"
+            base:
+              can_belong_to_root: solo puede pertenecer a un producto padre
+        tienda/order_item:
+          attributes:
+            quantity:
+              too_high_quantity: no hay disponibilidad en stock
+        tienda/payment:
+          refund_failed: "Las devoluciones deben ser menor al pago (%{refundable_amount})"
+
+  will_paginate:
+    next_label: "Siguiente &#8594;"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Anterior"
+
+    page_entries_info:
+
+      single_page:
+        zero:  "%{model} no fue encontrado"
+        one:   "Mostrando 1 %{model}"
+        other: "Mostrando todos %{count} %{model}"
+
+      single_page_html:
+        zero:  "%{model} no fue encontrado"
+        one_html:   "Mostrando <b>1</b> %{model}"
+        other_html: "Mostrando <b>todos&nbsp;%{count}</b> %{model}"
+
+      multi_page: "Mostando %{model} %{from} - %{to} de %{count} en total"
+      multi_page_html: "Mostrando %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> en total"
+
+  helpers:
+    number_to_weight:
+      kg: kg
+    page_entries_info:
+      one_page:
+        display_entries: Mostrar Entradas
+    attachment_preview:
+      delete: Borrar
+      delete_confirm: Estas seguro que quieres eliminar el archivo adjunto?
+      no_attachment: No hay archivo adjunto
+
+  tienda:
+
+    # common
+    cancel: Cancelar
+    close: Cerrar
+    delete: Borrar
+    edit: Editar
+    import: Importar
+    remove: Remover
+    submit: Enviar
+
+    attachments:
+      remove_notice: El archivo fue removido con exito
+
+    countries:
+      back: Volver a paises
+      continent: Continente
+      countries: Paises
+      country_details: Detalles del pais
+      create_notice: El pais fue creado con exito
+      delete_confirmation: Estas seguro que quieres eliminar este pais?
+      destroy_notice: El pais fue removido con exito
+      eu?: EU?
+      eu_member: Miembro de la UE?
+      is_eu_member: El pais es miembro de la UE?
+      iso_alpha_2: ISO 3166-1-alpha-2
+      iso_alpha_3: ISO 3166-1-alpha-3
+      name: Nombre
+      new_country: Nuevo pais
+      tld: TLD
+      update_notice: El pais fue actualizado con exito
+
+    delivery_service_prices:
+      all_countries: Todos los paises
+      back: Volver a precios
+      back_to_delivery_services: Volver a servicios de entrega
+      code: Codigo
+      cost: Costo
+      cost_price: Precio de costo
+      countries: Paises
+      create_notice: El precio fue creado con exito
+      delivery_services: Servicios de entrega
+      destroy_notice: El precio fue removido con exito
+      identification_weight: Precio e identificacion
+      max_weight: Peso maximo
+      min_weight: Peso minimo
+      new_price: Nuevo precio
+      no_tax: Sin impuestos
+      price: Precio
+      pricing: Precio
+      pricing_for: "Costo de entrega para %{delivery_name}"
+      tax_rate: Taza de impuesto
+      update_notice: El precio fue actualizado con exito
+      weight_allowance: Peso permitido
+
+      help:
+        countries: El siguiente costo de entrega esta disponible para los paises en la lista a continuacion.
+
+    delivery_services:
+      active?: Activo?
+      active: Activo
+      active_info: El servicio estara disponible para ser usado
+      back: Volver a servicios de entrega
+      code: Codigo
+      courier: Courier
+      courier_name: Nombre del courier
+      create_notice: El servicio de entrega ha sido creado con exito
+      default?: Usar por defecto?
+      default: Defecto
+      default_info: El servicio de entraga sera usado por defecto (si es posible)
+      delivery_services: Servicios de entrega
+      destroy_notice: El servicio de entrega ha sido actualizado con exito
+      delete_confirmation: Esta seguro que quiere eliminar el servicio de entrega?
+      details: Detalles
+      name: Nombre
+      new: Nuevo servicio de entrega
+      no_services: No hay servicios de entrega para mostrar.
+      prices: Precios
+      set_prices: Set Prices
+      tracking_url: URL de seguimiento
+      tracking_url_help_html: Use <code>{{consignment_number}}</code> to insert the consignment number.
+      update_notice: El servicio de entrega ha sido actualizado con exito
+
+    imports:
+      example_file: Formato de ejemplo
+      file_upload: Archivos a importar
+      required_formats: El archivo debe ser de tipo csv, xls o xlsx.
+      errors:
+        no_file: No selecciono un archivo para subir
+        unknown_format: "Formato de archivo desconocido: %{filename}"
+
+    orders:
+      accept: Acceptat
+      accept_notice: La orden de compra se acepto con exito
+      add_payment: Agregar metodo de pago
+      add_item: Agregar un item
+      address: Direccion
+      amount: Monto
+      back_to_order: Volver a la orden
+      back_to_orders: Volver a ordenes
+      billing_address: Direccion de cobro
+      billing_delivery_address: Direccion de cobro/entrega
+      build_time: Tiempo de consolidacion
+      company: Compania
+      consignment_number: Consignment Number
+      cost: Costo
+      country: Pais
+      create_order: Crear orden
+      create_notice: La orden ha sido creada con exito
+      customer: Cliente
+      delivery_address: Direccion de entrega
+      delivery_name: Nombre de entrega
+      edit_order: Editar orden
+      email_address: E-Mail
+      first_name: Nombre/s
+      from_payment: de pago
+      id: ID
+      in_progress_warning: Esta orden aun esta siendo consolidada, solo puede ver los productos de la orden.
+      invoice_number: Numero de factura
+      insufficient_stock_order: "El stock es insuficiente %{out_of_stock_items}."
+      item: Item
+      last_name: Apellido
+      mark_as_shipped: Marcar como enviado
+      method: Metodo
+      missing_delivery_service: No exist un serivicio de entrega que cumpla con las condiciones, la orden no puede ser creada sin un servicio de entrega.
+      name: Nombre
+      new_order: Nueva orden
+      no_delivery_required: Servicio de entrega no es necesario para completar esta orden
+      no_orders: No hay ordenes para mostrar.
+      no_payments: No hay pagos registrados para esta orden...
+      notes: Notas
+      number: Numero
+      order: Orden
+      order_accepted: Orden Aceptada
+      order_balance: Balance de la orden
+      order_items: Items de la orden
+      order_no_html: "Orden <b>#%{order_number}</b>"
+      order_number: Numero de orden
+      order_received: Orden recibidad
+      ordered_products: Productos de la orden
+      orders: Ordenes
+      payment: Pagos
+      payment_remove_confirmation: Esta seguro que quiere eliminar esta orden?
+      payments: Pagos
+      phone_number: Numero telefonico
+      post_code: Codigo postal
+      price: Precio
+      product: Producto
+      products: Productos
+      qty: Ctd
+      quantity: Cantidad
+      received_between: Recibido entre
+      reference: Referencia
+      refund: Devoludion
+      refunded?: Devuelto?
+      reject: Rechazar
+      reject_notice: La orden fue rechazada con exito
+      save_order: Salvar orden
+      search: Buscar
+      search_orders: Buscar ordenes
+      select_country: Seleccionar pais
+      separate_delivery_address: Separa direccion de envio
+      ship_notice: La orden fue enviada con exito
+      sku: SKU
+      sla_warning: Los cambios en cantidades impactaran sobre el numero total de productos en stock.
+      status: Estado
+      stock: Stock
+      sub_total: Sub-Total
+      tax: Impuesto
+      telephone: Numero telefonico
+      total: Total
+      type: Tipo
+      unit_price: Precio por unidad
+      update_notice: La orden ha sido salvada con exito
+      use_separate_delivery_address?: Desea usar una direccion de envio diferent a la de cobro?
+      weight: Peso
+
+      status_bar:
+        by_user: "por %{user}"
+        consignment_no_html: "Consignment #<b>%{consignment_number}</b>"
+        from_ip: "de %{ip}"
+        on_date: "el %{on}"
+        tracking_url:  Tracking URL
+
+      despatch_note:
+        despatch_note: Nota de envio
+        footer: Gracias por su compra!
+        order_number: Numero de orden
+        order_placed: La orden fue recibida
+        packed?: Empacado?
+        product: Producto
+        quantity: Cantidad
+        sku: SKU
+        telephone: Numero telefonico
+        total_weight: Peso total
+        weight: Peso
+
+      statuses:
+        accepted: Aceptado
+        building: En progreso
+        confirming: Confirmando
+        received: Recibido
+        rejected: Rechazado
+        shipped: Enviado
+
+    product_category:
+      attachments: Adjuntos
+      back_to_categories: Volver a la lista de categorias
+      category_details: Detalle de la categoria
+      create_notice: La categoria fue creada con exito
+      delete_confirmation:  Estas seguro que deseas eliminar esta categoria?
+      description: Descripcion
+      destroy_notice: La categoria fue eliminada con exito
+      image: Imagen
+      name: Nombre
+      new_category: Nueva categoria
+      no_categories: No hay categorias para mostrar.
+      permalink: Permalink
+      product_categories: Categorias de producto
+      update_notice: La categoria fue actualizada con exito
+
+    products:
+      add_attribute: Agregar atributo
+      attachments: Adjuntos
+      attributes: Atributos
+      back_to_products: Volver a la lista de productos
+      cost_price: Precio de costo
+      create_notice: El producto fue creado con exito
+      datasheet: Datasheet
+      default_image: Imagen por defecto
+      description: Descripcion
+      destroy_notice: El producto ha sido eliminado con exito
+      edit: Editar
+      enable_stock_control?: Desea habiliar el control de stock para este producto?
+      featured?: Destacado?
+      featured_info:  Si lo chequea este producto aparecera en la pagina inicial
+      import_products: Importar productos
+      in_the_box: Que hay dentro de la caja?
+      name: Nombre
+      new_product: Nuevo producto
+      no_products: No hay productos para mostrar.
+      no_stock: No hay stock disponible
+      no_tax: Sin impuestos
+      on_sale?: En oferta?
+      on_sale_info:  Si lo chequea este producto aparecera en la tienda online.
+      permalink: Permalink
+      price: Precio
+      price_variants: Precio/Variantes
+      pricing: Precios
+      product_category: Cateogira del productoo
+      product_information: Informacion del producto
+      products: Productos
+      public?: Publico?
+      remove: Remover
+      searchable?: Disponible en la busqueda?
+      short_description: Descripcion corta
+      sku: SKU
+      stock: Stock
+      stock_control: Control de stock
+      stock_levels: Niveles de stock
+      tax_rate: Taza de impuesto
+      value: Valor
+      variants: Variantes
+      update_notice: El producto ha sido actualizado con exito
+      website_properties: Propiedades del sitio
+      weight: Peso
+
+      imports:
+        help: Los Productos son emparejados con Categorias por nombre.  Si el producto no es encontrado se creara uno nuevo con los atributos dados de lo contrario el Stock para el Producto existente sera incrementado. Si la Categoria ingresada no existe, esta sera creada. Ingrese un item por linea.
+        success: Los Productos fueron importados con exito.
+        examples:
+          first:
+            name: Plush Teddy Bear
+            sku: BEAR001
+            description: Fantastically plush. Very cuddly. Great for all ages.
+            short_description: Buy this for your kids.
+            weight: 1.2
+            price: 84.95
+            category_name: Teddy Bears
+            qty: 20
+          second:
+            name: Standard Teddy Bear
+            sku: BEAR002
+            description: Made out of PVC. A little cuddly. Spill resistant.
+            short_description: Buy this for those with two left thumbs.
+            weight: 0.6
+            price: 24.95
+            category_name: Teddy Bears
+            qty: 100
+          third:
+            name: Stick Teddy Bear
+            sku: BEAR003
+            description: Made out of sticks. Not really cuddly. All natural. Fire hazard.
+            short_description: Buy this for that distant aunt who collects bears.
+            weight: 0.521
+            price: 1.95
+            category_name: Teddy Bears
+            qty: 50
+
+    registries:
+      registries: Colectivos
+      new_registry: Nuevo Colectivo
+      name: Nombre
+      slug: Url
+      category: Categoria
+      active: Activo
+      active_yes: Si
+      active_no: No
+      products: Productos
+      no_registries: No hay colectivos disponibles.
+      back_to_registries: Volver a colectivos.
+      list: Listado de Colectivos
+      delete_message: El colectivo ha sido eliminado con exito.
+      delete_prompt: Esta seguro que desea eliminar este Colectivo?
+
+    refund:
+      intro_html: "Para ingresar una devolucion, ingrese el monto a devolver y haga cick en 'Devolver'. El maximo monto que puede ser devuelto es <b>%{amount}</b>."
+      issue_refund: Monto Devuelto
+      refund: Devolver
+
+    sessions:
+      admin_login: Login de Administrador
+      create_alert: La combinacion email/password ingresada es incorrecta. Por favor intente de nuevo.
+      back_to_login: Volver a login
+      email:  E-Mail
+      login: Login
+      password: Password
+      reset: Restaurar
+      reset_password: Restaurar password
+      reset_password?: Restaurar password?
+      reset_alert: La combinacion email/password ingresada es incorrecta. Por favor intente de nuevo.
+      reset_notice: "Un email fue enviado a %{email_address} con un nuevo password"
+
+    shared:
+      back_to_tienda: Volver a la Tienda
+      error: Error
+      error_occurred: Ha ocurrido un error
+
+    stock_level_adjustments:
+      add: Agregar
+      adjustment: Ajuste
+      back_to_product: Volver a la lista de Productos
+      create_notice: Ajuste actualizado con exito.
+      current_stock_level_html: "El nivel de stock es: <b>%{item_stock}</b>"
+      date: Fecha
+      description: Descripcion
+      edit_product: Editar Producto
+      invalid_item_type: "Invalid item_type (must be one of %{suitable_objects})"
+      stock_levels_for: "Nivles de Stock para %{item_name}"
+      stock_levels_title: "Niveles de Stock - %{item_name}"
+
+    tax_rates:
+      address_type_option: "Aplicar a ordenes que sean pedidas desde el Pais"
+      all_countries: Todos los Paises
+      back_to_tax_rates: Volver a tazas de impuesto
+      billing: cobro
+      country_restriction: Country Restriction
+      create_notice: La taza de impuesto ha sido creada con exito
+      delete_confirmation: Seguro que deseas remover la taza de impuesto?
+      delivery: entrega
+      destroy_notice: La taza de impuesto ha sido eliminada con exito
+      name: Nombre
+      new_tax_rate: Taza de Impuesto
+      rate: Tarifa
+      rate_details: Detalles de Tarifa
+      tax_rates: Tazas de Impuesto
+      update_notice: La taza de impuesto ha sido actualizada con exito
+
+    users:
+      back_to_users: Volver a Usuarios
+      create_notice: El Usuario ha sido creado con exito.
+      delete_confirmation:  Esta seguro que quiere remover el Usuario?
+      demo_mode_error: No se le pueden realizar cambios a los Usuarios en modo Demo. Perdon.
+      destroy_notice: El Usuario ha sido eliminado con exito.
+      email: E-Mail
+      first_name: Nombre
+      last_name: Apellido
+      login: Login
+      name: Nombre
+      new_user: Nuevo Usuario
+      password: Password
+      password_confirmation: ...ingrese nuevamente
+      self_remove_error: No puede eliminar su propio Usuario.
+      update_notice: El Usuario ha sido actualizado con exito.
+      user_details: Detalles del Usuario.
+      users: Usuarios
+
+    variants:
+      back_to_variants: Back to variants
+      cost_price: Cost price
+      create_notice: Variant has been added successfully
+      default_variant?: Default variant?
+      default_variant_info: If checked, this variant will be the default
+      delete_confirmation: Are you sure you wish to remove this variant?
+      destroy_notice: Variant has been removed successfully
+      edit_product: Edit product
+      edit_variant: New variant
+      enable_stock_control?: Enable stock control for this product?
+      image: Image
+      name: Name
+      no_products: No products to display.
+      no_stock: No stock
+      no_tax: No tax
+      new_variant: New variant
+      on_sale?: On sale?
+      on_sale_info: If checked, this product will be displayed within the public store
+      permalink: Permalink
+      price: Precio
+      pricing: Precio
+      product_information: Informacin del Producto
+      save_variant: Salvar Variante
+      sku: SKU
+      stock: Stock
+      stock_control: Control de Stock
+      tax_rate: Taza de Impuesto
+      update_notice: La Variate ha sido actualizada con exito.
+      variants: Variantes
+      variants_of: "Variantes de %{product}"
+      website_properties: Propiedades del sitio
+      weight: Peso
+
+    payments:
+      create_notice: El metodo de pago ha sido creado con exito.
+      destroy_notice: El metodo de pago ha sido eliminado con exito.
+      refund_notice: El retorno ha sido devuelto con exito.
+
+    navigation:
+      admin_primary:
+        root: Dashboard
+        orders: Ordenes
+        products: Productos
+        product_categories: Categorias
+        delivery_services: Servicios de Entrega
+        tax_rates: Tazas de impuesto
+        users: Usuarios
+        countries: Paises
+        registries: Colectivos
+        settings: Ajustes
+
+    settings:
+
+      settings: Ajustes
+      system_settings: Ajustes de Sistema
+      demo_mode_error: No se pueden hacer ajustes al sistema en modo demo. Perdon.
+      update_notice:  Los ajustes han sido actualizados.
+
+      types:
+        # Force certain settings to certain type
+        demo_mode: boolean
+
+      labels:
+        # Labels for fields go here
+        email_address: E-Mail de la tienda
+        store_name: Nombre de la Tienda
+        currency_unit: Unidad de Moneda
+        tax_name: Nombre del Impuesto
+        demo_mode: Modo Demo
+
+      options:
+        # Options for boolean settings
+        demo_mode:
+          affirmative: Habilitado
+          negative: Deshabilitado
+
+      help:
+        # Help text for individual fields
+        currency_unit: Simbolo que sera mostrado en frente a los valores de moneda. Solo aplica para la interfaz de Administrador.
+        demo_mode: Si se habilita, cualquier Usuario podra ingresar a la seccion de Administrador de la tienda. No usar en Produccion.
+        email_address: Casilla de correo utilizada para mandar mensajes.
+        store_name: Nombre de la Tienda para ser usado en la interfaz de Administracion y mensajes de E-Mail
+        tax_name: The name for "Tax" which will be displayed in your admin interface. Commonly replaced with VAT in European countries.
+
+      save_settings: Salvar Ajustes
+      page_title: Ajustes
+
+      defaults:
+        currency_unit: $
+        demo_mode: false
+        email_address: sales@example.com
+        store_name: Widgets Inc.
+        tax_name: Tax
+
+  layouts:
+    tienda:
+      application:
+        goto: Ir a
+        logged_in_as: "Registrado como %{user_name}"
+        logout: Salir

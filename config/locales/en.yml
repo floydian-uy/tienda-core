@@ -477,6 +477,22 @@ en:
             category_name: Teddy Bears
             qty: 50
 
+    registries:
+      registries: Registries
+      new_registry: New Registry
+      name: Name
+      slug: Slug
+      category: Category
+      active: Active
+      active_yes: Yes
+      active_no: No
+      products: Products
+      no_registries: There are no registries available.
+      back_to_registries: Back to regitries.
+      list: Listing Registries
+      delete_message: Registry has been deleted
+      delete_prompt: Are you sure you wish to delete this Registry?
+
     refund:
       intro_html: "To issue a refund for this payment, just enter the amount you wish to refund below and click 'Refund'.  The maximum you can refund is <b>%{amount}</b>."
       issue_refund: Issue Refund
@@ -598,6 +614,7 @@ en:
         tax_rates: Tax Rates
         users: Users
         countries: Countries
+        registries: Registries
         settings: Settings
 
     settings:

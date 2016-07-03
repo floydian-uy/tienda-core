@@ -494,6 +494,11 @@ line-height: 1.428571429;
   color: #E33127;
 }
 
+.no-style-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 /*----------------------------------------------
     MEDIA QUERIES
 ------------------------------------------------*/
@@ -525,3 +530,4 @@ padding-top: 14px;
 font-size: 19px;
 }
 }
+

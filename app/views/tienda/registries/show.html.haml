@@ -1,0 +1,9 @@
+Registry
+=@registry.name
+%br
+Registry Products:
+%br
+%ul
+  %li
+    - @registry.products.each do |product|
+      = product.name

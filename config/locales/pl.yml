@@ -483,6 +483,22 @@ pl:
             category_name: Teddy Bears
             qty: 50
 
+    registries:
+      registries: Registries
+      new_registry: New Registry
+      name: Name
+      slug: Slug
+      category: Category
+      active: Active
+      active_yes: Yes
+      active_no: No
+      products: Products
+      no_registries: There are no registries available.
+      back_to_registries: Back to regitries.
+      list: Listing Registries
+      delete_message: Registry has been deleted
+      delete_prompt: Are you sure you wish to delete this Registry?
+
     sessions:
       admin_login: Login administratora
       create_alert: Zły login lub hasło. Proszę spróbować ponownie.

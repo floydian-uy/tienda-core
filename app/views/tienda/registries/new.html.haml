@@ -1,0 +1,7 @@
+- @page_title = t('tienda.registries.registries')
+
+= content_for :header do
+  %p.buttons= link_to t('tienda.registries.back_to_registries') , :registries, :class => 'button'
+  %h2.products= t('tienda.registries.registries')
+
+= render 'form'

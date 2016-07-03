@@ -423,6 +423,7 @@ pt-BR:
       product_category: Categoria de produto
       product_information: Informação do Produto
       products: Produtos
+      registry: Registry
       public?: Público?
       remove: Remover
       searchable?: Pesquisável?
@@ -469,6 +470,22 @@ pt-BR:
             price: 1.95
             category_name: Teddy Bears
             qty: 50
+
+    registries:
+      registries: Registries
+      new_registry: New Registry
+      name: Name
+      slug: Slug
+      category: Category
+      active: Active
+      active_yes: Yes
+      active_no: No
+      products: Products
+      no_registries: There are no registries available.
+      back_to_registries: Back to registries.
+      list: Listing Registries
+      delete_message: Registry has been deleted
+      delete_prompt: Are you sure you wish to delete this Registry?
 
     refund:
       intro_html: "Para emitir uma devolução para este pagamento, entre a quantidade que você deseja devolver abaixo e clique em 'Devolver'.  O máximo que você pode devolver é <b>%{amount}</b>."

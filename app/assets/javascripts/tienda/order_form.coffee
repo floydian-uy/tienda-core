@@ -44,4 +44,3 @@ $ ->
         $('div.moneyInput input', form).each formatMoneyField
         if focusedField?
           $("##{focusedField}").focus().trigger("chosen:activate")
-          
