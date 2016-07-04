@@ -1,10 +1,11 @@
 %table.table.table-hover
   %thead
     %tr
+      %th{width: '5%'}= t('tienda.edit')
       %th{width: '20%'}= t('tienda.registries.name')
       %th{width: '40%'}= t('tienda.registries.slug')
       %th{width: '25%'}= t('tienda.registries.active')
-      %th{width: '10%'}= t('tienda.delete')
+      %th{width: '5%'}= t('tienda.delete')
   %tbody
     - if registries.empty?
       %tr.empty
@@ -12,7 +13,8 @@
     - else
       - for registry in registries
         %tr
-          %td= link_to registry.name, [:edit, registry]
+          %td= link_to t('tienda.edit'), edit_registry_path(registry.id)
+          %td= link_to registry.name, registry_path(registry.id)
           %td= registry.name
           - if registry.active
             %td

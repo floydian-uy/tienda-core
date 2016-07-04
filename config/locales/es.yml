@@ -476,8 +476,8 @@ en:
             qty: 50
 
     registries:
-      registries: Colectivos
-      new_registry: Nuevo Colectivo
+      registries: Listas de regalos
+      new_registry: Nueva Lista
       name: Nombre
       slug: Url
       category: Categoria
@@ -485,13 +485,14 @@ en:
       active_yes: Si
       active_no: No
       products: Productos
-      no_registries: No hay colectivos disponibles.
-      back_to_registries: Volver a colectivos.
-      list: Listado de Colectivos
-      create_notice: El colectivo ha sido creado con exito.
-      update_notice: El colectivo ha sido modificado con exito.
-      delete_message: El colectivo ha sido eliminado con exito.
-      delete_prompt: Esta seguro que desea eliminar este Colectivo?
+      action: Accion
+      no_registries: No hay listas disponibles.
+      back_to_registries: Volver a listas de regalos.
+      list: Listado de Listas de regalos
+      create_notice: La Lista de regalos ha sido creado con exito.
+      update_notice: Lista de regalos ha sido modificado con exito.
+      delete_message: Lista de regalos ha sido eliminado con exito.
+      delete_prompt: Esta seguro que desea eliminar esta lista de regalos?
 
     refund:
       intro_html: "Para ingresar una devolucion, ingrese el monto a devolver y haga cick en 'Devolver'. El maximo monto que puede ser devuelto es <b>%{amount}</b>."
@@ -614,7 +615,7 @@ en:
         tax_rates: Tazas de impuesto
         users: Usuarios
         countries: Paises
-        registries: Colectivos
+        registries: Lista de regalos
         settings: Ajustes
 
     settings:

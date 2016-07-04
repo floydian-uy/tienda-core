@@ -1,9 +1,6 @@
-Registry
-=@registry.name
-%br
-Registry Products:
-%br
+%h3= @registry.name
+%p= t('tienda.registries.products')
 %ul
-  %li
-    - @registry.products.each do |product|
+  - @registry.products.each do |product|
+    %li
       = product.name

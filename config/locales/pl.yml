@@ -493,6 +493,7 @@ pl:
       active_yes: Yes
       active_no: No
       products: Products
+      action: Action
       no_registries: There are no registries available.
       back_to_registries: Back to regitries.
       list: Listing Registries
