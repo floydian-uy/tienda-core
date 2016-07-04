@@ -20,8 +20,7 @@
         .col-md-1
           .form-group
             = f.label :active, t('tienda.registries.active')
-            = f.hidden_field :active
-            = check_box_tag :registries_active, class: 'form-control focus'
+            = f.check_box :active, class: 'form-control focus'
         -#.col-md-12
           .form-group
             = label_tag('Buscar producto')
@@ -29,11 +28,24 @@
         .col-md-12
           .form-group
             = f.label :products, t('tienda.registries.products')
-            %ul.no-style-list
-              = f.collection_check_boxes :product_ids, Tienda::Product.all, :id, :name do |p|
-                %li
-                  = p.check_box
-                  = p.label
-            %br
+            %table#registries-products-table.no-style-list
+              %thead
+                %tr
+                  %th
+                    Nombre
+                  %th
+                    Seleccionar
+              %tbody
+                = f.collection_check_boxes :product_ids, Tienda::Product.all, :id, :name do |p|
+                  %tr
+                    %td
+                      = p.label
+                    %td
+                      = p.check_box
         .col-md-12
           = f.submit t('tienda.submit'),  class: 'btn btn-primary'
+
+:javascript
+  $(document).ready(function(){
+    $('#registries-products-table').DataTable();
+  });

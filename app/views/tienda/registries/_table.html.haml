@@ -14,5 +14,10 @@
         %tr
           %td= link_to registry.name, [:edit, registry]
           %td= registry.name
-          %td= registry.active ? t('tienda.registries.a_yes') : t('tienda.registries.no')
+          - if registry.active
+            %td
+              = t('tienda.registries.active_yes')
+          - else
+            %td
+              No
           %td= link_to "X", registry, method: :delete, data: {confirm: t('tienda.registries.delete_prompt')}

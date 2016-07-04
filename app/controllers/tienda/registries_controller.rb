@@ -42,7 +42,7 @@ module Tienda
     private
 
     def safe_params
-      params[:registry].permit(:name, :products, :slug, :category, :product_ids => [])
+      params[:registry].permit(:name, :products, :slug, :category, :active, :product_ids => [])
     end
 
   end
