@@ -496,6 +496,8 @@ pl:
       no_registries: There are no registries available.
       back_to_registries: Back to regitries.
       list: Listing Registries
+      create_notice: Registry has been created
+      update_notice: Registry has been updated
       delete_message: Registry has been deleted
       delete_prompt: Are you sure you wish to delete this Registry?
 

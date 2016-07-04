@@ -488,6 +488,8 @@ en:
       no_registries: No hay colectivos disponibles.
       back_to_registries: Volver a colectivos.
       list: Listado de Colectivos
+      create_notice: El colectivo ha sido creado con exito.
+      update_notice: El colectivo ha sido modificado con exito.
       delete_message: El colectivo ha sido eliminado con exito.
       delete_prompt: Esta seguro que desea eliminar este Colectivo?
 

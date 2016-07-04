@@ -16,12 +16,20 @@ module Tienda
     end
 
     def create
-      puts "params[:registry]: #{params[:registry]}"
       @registry = Tienda::Registry.new(safe_params)
       if @registry.save
-        redirect_to :registries, flash: { notice: t('tienda.products.create_notice') }
+        redirect_to :registries, flash: { notice: t('tienda.registry.create_notice') }
       else
         render :new
+      end
+    end
+
+    def update
+      @registry = Tienda::Registry.find_by_id(params[:id])
+      if @registry.update(safe_params)
+        redirect_to registry_path(@registry.id), flash: { notice: t('tienda.registry.update_notice') }
+      else
+        render action: "edit"
       end
     end
 
