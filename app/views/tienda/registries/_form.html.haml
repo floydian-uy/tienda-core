@@ -46,6 +46,19 @@
           = f.submit t('tienda.submit'),  class: 'btn btn-primary'
 
 :javascript
-  $(document).ready(function(){
-    $('#registries-products-table').DataTable();
-  });
+  var productsTable;
+  /*$(document).ready(function(){
+    productsTable = $('#registries-products-table').DataTable({
+    });
+  });*/
+
+:css
+  #registries-products-table_filter{
+    float: left;
+    margin: 2rem 0 2rem 2rem;
+  }
+
+  .dataTables_length{
+    float: right !important;
+    margin: 2rem 2rem 0 2rem;
+  }
