@@ -1,10 +1,12 @@
-Hola <%=@order.first_name%>!
+Hello <%=@order.first_name%>!
 
-Re: Orden #<%=@order.number%>
+Re: Order #<%=@order.number%>
 
-La orden esta siendo preparada.
+We're pleased to let you know that we have accepted your order and your payment of <%=number_to_currency @order.total%> has been taken from your card successfully.
 
-Gracias,
+We will e-mail you again when we ship your order from our warehouse.
+
+Many thanks,
 
 <%=Tienda.settings.store_name%>
 <%=Tienda.settings.email_address%>
