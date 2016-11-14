@@ -92,6 +92,7 @@ module Tienda
 
     def deliver_received_order_email
       Tienda::OrderMailer.received(self).deliver_now
+      Tienda::OrderMailer.received_store(self).deliver_now
     end
 
   end

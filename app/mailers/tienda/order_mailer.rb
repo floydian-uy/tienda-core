@@ -3,7 +3,12 @@ module Tienda
 
     def received(order)
       @order = order
-      mail :from => Tienda.settings.outbound_email_address, :to => order.email_address, :subject => I18n.t('tienda.order_mailer.received.subject', :default => "Order Confirmation")
+      mail :from => Tienda.settings.outbound_email_address, :to => order.email_address, :subject => I18n.t('tienda.order_mailer.received.subject', :default => "Confirmacion de Orden")
+    end
+
+    def received_store(order)
+      @order = order
+      mail :from => Tienda.settings.outbound_email_address, :to => Tienda.settings.outbound_email_address, :subject => I18n.t('tienda.order_mailer.received.subject', :default => "Confirmacion de Orden")
     end
 
     def accepted(order)
